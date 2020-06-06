@@ -1,4 +1,4 @@
-## My Project
+## Amazon EKS Operator for RBAC-IAM Integration
 
 TODO: Fill this README out!
 
