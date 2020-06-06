@@ -1,0 +1,25 @@
+{
+	"FunctionName": "K8sClientForIAMEvents",
+	"Runtime": "java8",
+	"Role": "",
+	"Handler": "com.octank.IAMEventHandler::handleRequest",
+	"Description": "K8s Client to Process IAM Notifications",
+	"Timeout": 30,
+	"MemorySize": 512,
+    "Code": {
+        "S3Bucket": "",
+        "S3Key": "eksLambda.jar"
+    },	
+	"Environment": {
+		"Variables": {
+			"REGION": "us-east-1",
+			"STS_ENDPOINT": "sts.us-east-1.amazonaws.com",
+			"ACCESS_KEY_ID": "",
+			"SECRET_ACCESS_KEY": "",
+			"ASSUMED_ROLE": "",
+			"CLUSTER_NAME": "",
+			"API_SERVER": "",
+			"CERT_AUTHORITY": ""
+		}
+	}
+}
