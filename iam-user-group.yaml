@@ -1,0 +1,11 @@
+---
+apiVersion: octank.com/v1
+kind: IamUserGroup
+metadata:
+  namespace: kube-system
+  name: viji-developers
+spec:
+  iamUser: 'arn:aws:iam::937351930975:user/viji'
+  iamGroups: 
+    - developers
+  username: viji
