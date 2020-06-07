@@ -29,3 +29,20 @@ Update the JSON file <b>createFunction.json</b> specifying appropriate values fo
   
 Deploy the Lambda function with the following command:
 <b>aws lambda create-function --cli-input-json file://createFunction.json</b>
+
+## Setup EventBridge Rule to Trigger Lambda Function
+
+Run the following set of commands to create an EventBridge rule that matches IAM event notifications and add the Lambda function as its target.
+
+<code>
+EVENT_RULE_ARN=$(aws events put-rule --name test4 --event-pattern "{\"source\":[\"aws.iam\"]}" --query RuleArn --output text)
+
+aws lambda add-permission \
+--function-name K8sClientForIAMEvents \
+--statement-id 'd6f44629-efc0-4f38-96db-d75ba7d06579' \
+--action 'lambda:InvokeFunction' \
+--principal events.amazonaws.com \
+--source-arn $EVENT_RULE_ARN
+
+aws events put-targets --rule IAMUserGroupRule --targets file://lambdaTarget.json
+</code>
