@@ -13,7 +13,7 @@ A Kubernetes Java client implemented as an AWS Lambda function whose execution i
 </li>
 </ul>
 
-<img class="wp-image-1960 size-full" src="K8sOperator.png" alt="Kubernetes RBAC and IAM integration with a custom controller" width="854" height="527" />
+<img class="wp-image-1960 size-full" src="images/K8sOperator.png" alt="Kubernetes RBAC and IAM integration with a custom controller" width="854" height="527" />
 
 ## Installation Instructions
 
