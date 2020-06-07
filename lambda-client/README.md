@@ -36,7 +36,7 @@ Run the following set of commands to create an EventBridge rule that matches IAM
 
 <code>
   
-EVENT_RULE_ARN=$(aws events put-rule --name test4 --event-pattern "{\"source\":[\"aws.iam\"]}" --query RuleArn --output text)
+EVENT_RULE_ARN=$(aws events put-rule --name IAMUserGroupRule --event-pattern "{\"source\":[\"aws.iam\"]}" --query RuleArn --output text)
 
 aws lambda add-permission \
 --function-name K8sClientForIAMEvents \
