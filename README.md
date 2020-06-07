@@ -18,9 +18,10 @@ A Kubernetes Java client implemented as an AWS Lambda function whose execution i
 ## Installation Instructions
 
 First, build the Docker image for the custom controller per instructions <a href="https://github.com/aws-samples/k8s-rbac-iam-java-operator/blob/master/java-operator">here</a>.
+
 Next, build and deploy the Lambda Kubernetes client per the instructions <a href="https://github.com/aws-samples/k8s-rbac-iam-java-operator/tree/master/lambda-client">here</a>.
 
-Deploy the Kubernetes operator to an Amazon EKS cluster as follows:<br/>
+Then, deploy the Kubernetes operator to an Amazon EKS cluster as follows:<br/>
 <b>kubectl apply -f operator.yaml</b>
 
 The initial state of <b>aws-auth</b> ConfigMap in the cluster contains the mapping that allows worker nodes to join the Amazon EKS cluster. Modify this ConfigMap applying the YAML manifest <b>aws-auth-configmap.yaml</b>. 
@@ -31,7 +32,6 @@ The initial state of <b>aws-auth</b> ConfigMap in the cluster contains the mappi
 
 Create a Kubernetes Role and RoleBinding as follows:</br>
 <b>kubectl apply -f rbac-lambda-clients.yaml</b>
-
 This will create a mapping that associates clients with the <b>lambda-clients</b> Kubernetes group if they were authenticated using temporary credentials that belong to the role LAMBDA_ROLE_ARN.
 
 ## License
