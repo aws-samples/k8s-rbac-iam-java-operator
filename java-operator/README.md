@@ -14,4 +14,4 @@ The Kubernetes operator is implemented using <a href="https://github.com/kuberne
 
 To build the JAR file, type <b>mvn clean</b> followed by <b>mvn package</b> at the command line. 
 
-To build the Docker image, use the <b>build-K8s.sh</b> script under the <docker-build> folder. Be sure to modify the TARGET_IMG variable to point to your repository in a Docker image registry.
+To build the Docker image, use the <b>build-K8s.sh</b> script under the <docker-build> folder. Be sure to modify the <b>TARGET_IMG</b> variable to point to your repository in a Docker image registry.
