@@ -2,8 +2,7 @@
 
 Kubernetes Operator that leverages new features in Kubernetes Java SDK to help manage the integration of Kubernetes role-based access control (<a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac">RBAC</a>) and AWS Identity and Access Management (<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html">IAM</a>) in a Kubernetes cluster provisioned using Amazon Elastic Kubernetes Service (<a href="https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html">Amazon EKS</a>)
 
-[caption id="attachment_1960" align="aligncenter" width="854"]
-<img class="wp-image-1960 size-full" src="K8sOperator.png" alt="Kubernetes RBAC and IAM integration with a custom controller" width="854" height="527" /> Kubernetes RBAC and IAM integration with a custom controller[/caption]
+<img class="wp-image-1960 size-full" src="K8sOperator.png" alt="Kubernetes RBAC and IAM integration with a custom controller" width="854" height="527" />
 
 ## Installation Instructions
 
