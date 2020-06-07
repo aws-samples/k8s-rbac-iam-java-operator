@@ -17,6 +17,7 @@ To build the JAR file, type <b>mvn clean</b> followed by <b>mvn package</b> at t
 Update the JSON file <b>createFunction.json</b> specifying appropriate values for the following fields:
 
 <ul>
+  <li><b>Role</b>: Execution role for the Lambda function</li>
   <li><b>Code.S3Bucket</b>: S3 bucket where the JAR file from the above build has been uploaded.
   <li><b>Environment.Variables.ASSUMED_ROLE</b>: IAM role that is mapped to a Kubernetes group in the EKS cluster which has permissions to manage <i>IamUserGroup</i> custom resources in the <i>kube-system</i> namespace.</li>
   <li><b>Environment.Variables.ACCESS_KEY_ID</b></li>
