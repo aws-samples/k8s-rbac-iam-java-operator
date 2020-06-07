@@ -26,8 +26,8 @@ Then, deploy the Kubernetes operator to an Amazon EKS cluster as follows:<br/>
 
 The initial state of <b>aws-auth</b> ConfigMap in the cluster contains the mapping that allows worker nodes to join the Amazon EKS cluster. Modify this ConfigMap applying the YAML manifest <b>aws-auth-configmap.yaml</b>. 
 <ul>
-<li>Replace <b>WORKER_NODE_ROLE_ARN</b> with the ARN of the IAM role assigned to the worker nodes in the EKS cluster.</li>
-<li> Replce <b>LAMBDA_ROLE_ARN</b> with the ARN of the IAM role mapped to a Kubernetes group in the EKS cluster which has permissions to manage <i>IamUserGroup</i> custom resources in the <i>kube-system</i> namespace.</li>.
+<li>Replace WORKER_NODE_ROLE_ARN with the ARN of the IAM role assigned to the worker nodes in the EKS cluster.</li>
+<li> Replce LAMBDA_ROLE_ARN with the ARN of the IAM role mapped to a Kubernetes group in the EKS cluster which has permissions to manage <i>IamUserGroup</i> custom resources in the <i>kube-system</i> namespace.</li>.
 </ul>
 
 Create a Kubernetes Role and RoleBinding as follows:</br>
