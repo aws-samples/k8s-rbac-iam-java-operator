@@ -17,10 +17,10 @@ To build the JAR file, type <b>mvn clean</b> followed by <b>mvn package</b> at t
 Update the file createFunction.json specifying appropriate values for the following environment variables:
 
 <ul>
-  <li>Code.S3Bucket: S3 bucket where the JAR file from the above build has been uploaded.
-  <li>Environment.Variables.ASSUMED_ROLE</li> IAM role that is mapped to a Kuberneted group in the EKS cluster which has permissions to manage IamUserGroup custom resources in the kube-system namespace.
-  <li>Environment.Variables.ACCESS_KEY_ID</li>
-  <li>Environment.Variables.SECRET_ACCESS_KEY</li> Credentials of IAM user that has permissions to assume the above IAM role
+  <li><b>Code.S3Bucket</b>: S3 bucket where the JAR file from the above build has been uploaded.
+  <li><b>Environment.Variables.ASSUMED_ROLE</b>: IAM role that is mapped to a Kuberneted group in the EKS cluster which has permissions to manage IamUserGroup custom resources in the kube-system namespace.</li>
+  <li><b>Environment.Variables.ACCESS_KEY_ID</b></li>
+  <li><b>Environment.Variables.SECRET_ACCESS_KEY</b>: Credentials of IAM user that has permissions to assume the above IAM role</li>
   
 </ul>
   
