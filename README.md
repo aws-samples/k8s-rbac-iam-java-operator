@@ -4,18 +4,22 @@ Kubernetes Operator that leverages new features in Kubernetes Java SDK to help m
 
 ## Installation Instructions
 
-First, build the Docker image for the customer controller per instructions <a href="https://github.com/aws-samples/k8s-rbac-iam-java-operator/blob/master/java-operator">here</a>.
+First, build the Docker image for the custom controller per instructions <a href="https://github.com/aws-samples/k8s-rbac-iam-java-operator/blob/master/java-operator">here</a>.
 Next, build and deploy the Lambda Kubernetes client per the instructions <a href="https://github.com/aws-samples/k8s-rbac-iam-java-operator/tree/master/lambda-client">here</a>.
 
-Deploy the operator to an Amazon EKS cluster as follows:<br/>
+Deploy the Kubernetes operator to an Amazon EKS cluster as follows:<br/>
 <b>kubectl apply -f operator.yaml</b>
 
-The initial state of <b>aws-auth</b> ConfigMap in the cluster contains the mapping that allows worker nodes to join the Amazon EKS cluster. Modify this ConfigMap by applying the YAML manifest <b>aws-auth-configmap.yaml</b>. Replace <b>WORKER_NODE_ROLE_ARN</b> with the ARN of the IAM role assigned to the worker nodes in the EKS cluster. Replce <b>LAMBDA_ROLE_ARN</b> with the ARN of the IAM role mapped to a Kubernetes group in the EKS cluster which has permissions to manage <i>IamUserGroup</i> custom resources in the <i>kube-system</i> namespace.</li>. 
+The initial state of <b>aws-auth</b> ConfigMap in the cluster contains the mapping that allows worker nodes to join the Amazon EKS cluster. Modify this ConfigMap applying the YAML manifest <b>aws-auth-configmap.yaml</b>. 
+<ul>
+<li>Replace <b>WORKER_NODE_ROLE_ARN</b> with the ARN of the IAM role assigned to the worker nodes in the EKS cluster.</li>
+<li> Replce <b>LAMBDA_ROLE_ARN</b> with the ARN of the IAM role mapped to a Kubernetes group in the EKS cluster which has permissions to manage <i>IamUserGroup</i> custom resources in the <i>kube-system</i> namespace.</li>.
+</ul>
 
 Create a Kubernetes Role and RoleBinding as follows:</br>
 <b>kubectl apply -f rbac-lambda-clients.yaml</b>
 
-This will create a mapping that associates clients with the lambda-clients Kubernetes group if they were authenticated using temporary credentials that belong to the role K8s-Lambda-Client-Role.
+This will create a mapping that associates clients with the <b>lambda-clients</b> Kubernetes group if they were authenticated using temporary credentials that belong to the role LAMBDA_ROLE_ARN.
 
 ## License
 
