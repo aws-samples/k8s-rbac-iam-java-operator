@@ -35,6 +35,7 @@ Deploy the Lambda function with the following command:
 Run the following set of commands to create an EventBridge rule that matches IAM event notifications and add the Lambda function as its target.
 
 <code>
+  
 EVENT_RULE_ARN=$(aws events put-rule --name test4 --event-pattern "{\"source\":[\"aws.iam\"]}" --query RuleArn --output text)
 
 aws lambda add-permission \
@@ -45,4 +46,5 @@ aws lambda add-permission \
 --source-arn $EVENT_RULE_ARN
 
 aws events put-targets --rule IAMUserGroupRule --targets file://lambdaTarget.json
+
 </code>
