@@ -17,7 +17,7 @@
 		<junit.version>4.12</junit.version>
 		<k8s.java.version>8.0.2-SNAPSHOT</k8s.java.version>
 		<aws.sdk.version>1.11.739</aws.sdk.version>
-		<vertx.version>3.3.3</vertx.version>
+		<vertx.version>3.5.4</vertx.version>
 	</properties>
 
 	<parent>
