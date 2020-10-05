@@ -2,7 +2,7 @@ package io.kubernetes.client.util;
 
 import org.apache.commons.codec.binary.Base64;
 
-import com.octank.config.EKSConfig;
+import com.amazonwebservices.blogs.containers.config.EKSConfig;
 
 import io.kubernetes.client.openapi.ApiClient;
 import io.kubernetes.client.util.ClientBuilder;

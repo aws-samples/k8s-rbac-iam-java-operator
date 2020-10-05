@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.octank</groupId>
+	<groupId>com.amazonwebservices.blogs.containers</groupId>
 	<artifactId>eksLambda</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
@@ -12,12 +12,11 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<log4j.version>1.2.17</log4j.version>
 		<java.version>1.8</java.version>
 		<junit.version>4.12</junit.version>
-		<k8s.java.version>8.0.2-SNAPSHOT</k8s.java.version>
+		<k8s.java.version>10.0.0</k8s.java.version>
 		<aws.sdk.version>1.11.739</aws.sdk.version>
-		<vertx.version>3.3.3</vertx.version>
+		<vertx.version>3.7.0</vertx.version>
 	</properties>
 
 	<parent>
@@ -76,9 +75,8 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4j.version}</version>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -88,6 +86,7 @@
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
+					<forceJavacCompilerUse>true</forceJavacCompilerUse>				
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 				</configuration>

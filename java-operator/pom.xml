@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.octank</groupId>
+	<groupId>com.amazonwebservices.blogs.containers</groupId>
 	<artifactId>k8sJava</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
@@ -14,13 +14,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<vertx.version>3.7.0</vertx.version>
 		<spring.version>5.1.2.RELEASE</spring.version>
-		<log4j.version>1.2.17</log4j.version>
-		<sl4jf.version>1.7.30</sl4jf.version>
 		<java.version>1.8</java.version>
 		<junit.version>4.12</junit.version>
-		<k8s.java.version>8.0.2-SNAPSHOT</k8s.java.version>
+		<k8s.java.version>10.0.0</k8s.java.version>
 		<aws.sdk.version>1.11.739</aws.sdk.version>
-
 	</properties>
 
 	<parent>
@@ -74,10 +71,10 @@
 
 		<dependency>
 			<groupId>io.kubernetes</groupId>
-  			<artifactId>client-java-spring-integration</artifactId>
+			<artifactId>client-java-spring-integration</artifactId>
 			<version>${k8s.java.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -89,45 +86,31 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>${sl4jf.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4j.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4j.version}</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.yaml</groupId>
 			<artifactId>snakeyaml</artifactId>
-			<version>1.21</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk-lambda</artifactId>
 			<version>${aws.sdk.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-lambda-java-core</artifactId>
 			<version>1.2.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-lambda-java-events</artifactId>
 			<version>2.2.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -137,6 +120,7 @@
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
+					<forceJavacCompilerUse>true</forceJavacCompilerUse>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 				</configuration>

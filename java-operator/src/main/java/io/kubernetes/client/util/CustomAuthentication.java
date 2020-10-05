@@ -11,8 +11,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.SimpleTimeZone;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -25,10 +25,10 @@ import com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClientBuilder
 import com.amazonaws.services.securitytoken.model.AssumeRoleRequest;
 import com.amazonaws.services.securitytoken.model.AssumeRoleResult;
 import com.amazonaws.services.securitytoken.model.Credentials;
-import com.octank.config.AWSConfig;
-import com.octank.config.EKSConfig;
-import com.octank.sigv4.AWS4SignerBase;
-import com.octank.sigv4.AWS4SignerForAuthorizationHeader;
+import com.amazonwebservices.blogs.containers.config.AWSConfig;
+import com.amazonwebservices.blogs.containers.config.EKSConfig;
+import com.amazonwebservices.blogs.containers.sigv4.AWS4SignerBase;
+import com.amazonwebservices.blogs.containers.sigv4.AWS4SignerForAuthorizationHeader;
 
 import io.kubernetes.client.openapi.ApiClient;
 import io.kubernetes.client.util.credentials.AccessTokenAuthentication;
