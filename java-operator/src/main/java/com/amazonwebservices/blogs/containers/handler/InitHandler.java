@@ -4,7 +4,7 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import io.vertx.core.Future;
+import io.vertx.core.Promise;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpMethod;
@@ -13,14 +13,14 @@ import io.vertx.core.http.HttpServerOptions;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.Router;
 
-public class InitHandler implements Handler<Future<Void>> {
+public class InitHandler implements Handler<Promise<Void>> {
 
 	private static final Logger logger = LogManager.getLogger(InitHandler.class);
 
 	private final int port = 8080;
 
 	private Vertx vertx;
-	private Future<Void> startFuture;
+	private Promise<Void> startFuture;
 	private HttpServer httpServer;
 
 	public InitHandler() {
@@ -32,7 +32,7 @@ public class InitHandler implements Handler<Future<Void>> {
 	@Autowired
 	private UptimeHandler healthHandler;
 	
-	public void init(Vertx vertx, JsonObject config, Future<Void> startFuture) {
+	public void init(Vertx vertx, JsonObject config, Promise<Void> startFuture) {
 		this.vertx = vertx;
 		this.startFuture = startFuture;
 
@@ -44,7 +44,7 @@ public class InitHandler implements Handler<Future<Void>> {
 	}
 
 	@Override
-	public void handle(Future<Void> event) {
+	public void handle(Promise<Void> event) {
 		try {
 			logger.info("Setting up routes for REST API endpoints");
 			

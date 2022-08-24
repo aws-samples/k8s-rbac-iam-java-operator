@@ -7,6 +7,7 @@ import com.amazonwebservices.blogs.containers.handler.InitHandler;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Future;
+import io.vertx.core.Promise;
 import io.vertx.core.Handler;
 
 public class WebVerticle extends AbstractVerticle {
@@ -22,9 +23,9 @@ public class WebVerticle extends AbstractVerticle {
 		initHandler = (InitHandler) context.getBean("initHandler");
 	}
 	
-	public void start(Future<Void> startFuture){
+	public void start(Promise<Void> startFuture){
 		initHandler.init(vertx, config(), startFuture);
-		Handler<Future<Void>> blockingCodeHandler = initHandler;
+		Handler<Promise<Void>> blockingCodeHandler = initHandler;
 		Handler<AsyncResult<Void>> resultHandler = asyncResult -> {};
 		vertx.executeBlocking(blockingCodeHandler, resultHandler);
 	}

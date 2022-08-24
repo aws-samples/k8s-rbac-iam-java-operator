@@ -12,11 +12,11 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<vertx.version>3.7.0</vertx.version>
+		<vertx.version>3.9.4</vertx.version>
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<java.version>1.8</java.version>
 		<junit.version>4.12</junit.version>
-		<k8s.java.version>10.0.0</k8s.java.version>
+		<k8s.java.version>11.0.1</k8s.java.version>
 		<aws.sdk.version>1.11.739</aws.sdk.version>
 	</properties>
 

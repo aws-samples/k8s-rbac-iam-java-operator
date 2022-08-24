@@ -20,8 +20,7 @@ public class ControllerRunner {
 	List<Controller> controllers = new ArrayList<Controller>();
 	SharedInformerFactory informerFactory;
 
-	public ControllerRunner(SharedInformerFactory sharedInformerFactory, 
-			Controller iamGroupCrdController) {
+	public ControllerRunner(SharedInformerFactory sharedInformerFactory, Controller iamGroupCrdController) {
 		this.informerFactory = sharedInformerFactory;
 		this.controllers.add(iamGroupCrdController);
 	}
